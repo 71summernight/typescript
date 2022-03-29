@@ -43,3 +43,44 @@ console.log(addNumbers(1,2,3,4,5,20))
     const json:JSON='json'
 
 }
+
+{
+// Union Types : Or
+type Direction = 'left' | 'right' | 'up' | 'down'
+function move(direction: Direction){
+    console.log(direction);
+}
+move('down')
+type TileSize = 8 | 16 | 32
+const title: TileSize = 16
+
+type SuccessState={
+    result:"success"
+    response:{
+        body:string;
+    }
+}
+type FailState={
+    result:"fail"
+    reason: string
+}
+type LoginState = SuccessState | FailState
+function login():LoginState {
+    return{
+        result:"success",
+        response: {
+            body: '축하표시 성공'!
+        }
+    }
+}
+// 별로 안좋은 코드
+function printLoginState(state:LoginState){
+    if( state.result ==='success'){
+        console.log(`축하표시 ${state.response.body}`)
+    }else {
+        console.log(`우는표시! ${state.reason}`)
+    }
+}
+//Discriminated Union
+
+}
