@@ -83,4 +83,85 @@ function printLoginState(state:LoginState){
 }
 //Discriminated Union
 
+
+// interSection  :and & 개념
+
+type Student ={
+    name: string;
+    score:number;
+}
+type Worker = {
+    empolyeeId: number;
+}
+
+function internWork(person: Student & Worker){
+    console.log(person.name,person.empolyeeId)
+}
+internWork({
+    name:'hyunjin',
+    score:1,
+    empolyeeId:1123,
+
+})
+
+//enum
+//JavaScript 
+const MONDAY = 0;
+const TUESDAY = 1;
+const WEDNESDAY = 2;
+const DAYS_ENUM = Object.freeze({"MONDAY": 0, "TUESDAY" : 1, "WEDNESDAY": 2})
+const dayOfToday= DAYS_ENUM.WEDNESDAY;
+
+//TypeScript
+enum Days {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday   
+}
+
+console.log(Days.Thursday)
+const day=Days.Saturday
+console.log(day)
+
+//enum은 타입추론이 안되기 때문에 typescript에서 안쓰는게 더 좋음 
+//대신에 unionType활용해 볼 수 있다.
+type DaysOfWeek = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday'
+let dayOfWeek: DaysOfWeek ='Sunday'
+
+}
+
+//Type Inference 타입추론
+{
+    let text = 'hello';
+    function print(message: string){
+        console.log(message);
+    }
+    print('hello');
+    //print(1)
+
+    function add(x:number,y:number){
+        return x+y
+    }
+
+    const result = add(1,2)
+
+}
+
+//Type Assertions
+{
+    function jsStrFunc(): any {
+        return 2
+    }
+const result=jsStrFunc();
+console.log((result as string).length)
+console.log((<string>result).length)
+const wrong: any =5;
+console.log((wrong as Array<number>).push(1));
+
+
+
 }
