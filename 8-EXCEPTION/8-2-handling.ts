@@ -22,7 +22,9 @@ class App {
         this.userService.login();
             //login...
         } catch(error) {
-            console.log(`catched!`);
+            if(error instanceof OfflineError) {
+                
+            }
         }
     }
 }
