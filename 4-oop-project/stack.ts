@@ -42,14 +42,27 @@ class StackImpl implements Stack {
 }
 
 
-const stack = new StackImpl(10);
-stack.push('Ellie 1')
-stack.push('Bob 2')
-stack.push('Steve 3')
-stack.push('Hyunjin 7')
+const stack1 = new StackImpl(10);
+stack1.push('Ellie 1')
+stack1.push('Bob 2')
+stack1.push('Steve 3')
+stack1.push('Hyunjin 7')
+stack1.push('Hyunjin 7')
+stack1.push('Hyunjin 7')
+stack1.push('Hyunjin 7')
+stack1.push('Hyunjin 7')
+stack1.push('Ellie 1')
+stack1.push('Bob 2')
+stack1.push('Steve 3')
+stack1.push('Hyunjin 7')
+stack1.push('Hyunjin 7')
+stack1.push('Hyunjin 7')
+stack1.push('Hyunjin 7')
+stack1.push('Hyunjin 7')
 
 
-while(stack.size !== 0 ){
-    console.log(stack.pop())
+
+while(stack1.size !== 0 ){
+    console.log(stack1.pop())
 }
 
