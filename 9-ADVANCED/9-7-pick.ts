@@ -5,7 +5,7 @@
         url: string;
         data: string;
     };
-    function getVideo(id: string):Video {
+    function getVideo1(id: string):Video {
         return {
             id,
             title: 'video',
@@ -14,7 +14,7 @@
         }
     }
     type videoMetaData = Pick<Video, 'id' | 'title'>
-    function getVideoMetaData(id: string):videoMetaData {
+    function getVideoMetaData1(id: string):videoMetaData {
         return {
             id,
             title: 'video',
